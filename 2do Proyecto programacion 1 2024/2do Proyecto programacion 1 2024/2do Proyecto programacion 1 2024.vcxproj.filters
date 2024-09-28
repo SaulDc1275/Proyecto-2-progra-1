@@ -15,8 +15,8 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="2do Proyecto programacion 1 2024.cpp">
-      <Filter>Archivos de origen</Filter>
+    <ClCompile Include="Source.cpp">
+      <Filter>Archivos de recursos</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

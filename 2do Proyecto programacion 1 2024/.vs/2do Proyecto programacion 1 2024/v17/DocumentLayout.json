@@ -3,8 +3,8 @@
   "WorkspaceRootPath": "D:\\GitHub\\Proyecto #2 progra 1\\Proyecto-2-progra-1\\2do Proyecto programacion 1 2024\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5BC6A607-B032-4082-BFE6-E687256F8FC6}|2do Proyecto programacion 1 2024\\2do Proyecto programacion 1 2024.vcxproj|D:\\GitHub\\Proyecto #2 progra 1\\Proyecto-2-progra-1\\2do Proyecto programacion 1 2024\\2do Proyecto programacion 1 2024\\2do Proyecto programacion 1 2024.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{5BC6A607-B032-4082-BFE6-E687256F8FC6}|2do Proyecto programacion 1 2024\\2do Proyecto programacion 1 2024.vcxproj|solutionrelative:2do Proyecto programacion 1 2024\\2do Proyecto programacion 1 2024.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{BB2BAEC3-4E12-453D-8441-040D85E3EDE1}|2do Proyecto programacion 1 2024\\2do Proyecto programacion 1 2024.vcxproj|D:\\GitHub\\Proyecto #2 progra 1\\Proyecto-2-progra-1\\2do Proyecto programacion 1 2024\\2do Proyecto programacion 1 2024\\Source.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{BB2BAEC3-4E12-453D-8441-040D85E3EDE1}|2do Proyecto programacion 1 2024\\2do Proyecto programacion 1 2024.vcxproj|solutionrelative:2do Proyecto programacion 1 2024\\Source.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -19,14 +19,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "2do Proyecto programacion 1 2024.cpp",
-              "DocumentMoniker": "D:\\GitHub\\Proyecto #2 progra 1\\Proyecto-2-progra-1\\2do Proyecto programacion 1 2024\\2do Proyecto programacion 1 2024\\2do Proyecto programacion 1 2024.cpp",
-              "RelativeDocumentMoniker": "2do Proyecto programacion 1 2024\\2do Proyecto programacion 1 2024.cpp",
-              "ToolTip": "D:\\GitHub\\Proyecto #2 progra 1\\Proyecto-2-progra-1\\2do Proyecto programacion 1 2024\\2do Proyecto programacion 1 2024\\2do Proyecto programacion 1 2024.cpp",
-              "RelativeToolTip": "2do Proyecto programacion 1 2024\\2do Proyecto programacion 1 2024.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Title": "Source.cpp",
+              "DocumentMoniker": "D:\\GitHub\\Proyecto #2 progra 1\\Proyecto-2-progra-1\\2do Proyecto programacion 1 2024\\2do Proyecto programacion 1 2024\\Source.cpp",
+              "RelativeDocumentMoniker": "2do Proyecto programacion 1 2024\\Source.cpp",
+              "ToolTip": "D:\\GitHub\\Proyecto #2 progra 1\\Proyecto-2-progra-1\\2do Proyecto programacion 1 2024\\2do Proyecto programacion 1 2024\\Source.cpp",
+              "RelativeToolTip": "2do Proyecto programacion 1 2024\\Source.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABcAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-09-28T22:59:09.566Z",
+              "WhenOpened": "2024-09-28T23:11:43.053Z",
               "EditorCaption": ""
             }
           ]
