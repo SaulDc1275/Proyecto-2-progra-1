@@ -3,8 +3,24 @@
   "WorkspaceRootPath": "D:\\GitHub\\Proyecto #2 progra 1\\Proyecto-2-progra-1\\2do Proyecto programacion 1 2024\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{BB2BAEC3-4E12-453D-8441-040D85E3EDE1}|2do Proyecto programacion 1 2024\\2do Proyecto programacion 1 2024.vcxproj|D:\\GitHub\\Proyecto #2 progra 1\\Proyecto-2-progra-1\\2do Proyecto programacion 1 2024\\2do Proyecto programacion 1 2024\\App.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{BB2BAEC3-4E12-453D-8441-040D85E3EDE1}|2do Proyecto programacion 1 2024\\2do Proyecto programacion 1 2024.vcxproj|solutionrelative:2do Proyecto programacion 1 2024\\App.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BB2BAEC3-4E12-453D-8441-040D85E3EDE1}|2do Proyecto programacion 1 2024\\2do Proyecto programacion 1 2024.vcxproj|D:\\GitHub\\Proyecto #2 progra 1\\Proyecto-2-progra-1\\2do Proyecto programacion 1 2024\\2do Proyecto programacion 1 2024\\App.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{BB2BAEC3-4E12-453D-8441-040D85E3EDE1}|2do Proyecto programacion 1 2024\\2do Proyecto programacion 1 2024.vcxproj|solutionrelative:2do Proyecto programacion 1 2024\\App.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{BB2BAEC3-4E12-453D-8441-040D85E3EDE1}|2do Proyecto programacion 1 2024\\2do Proyecto programacion 1 2024.vcxproj|D:\\GitHub\\Proyecto #2 progra 1\\Proyecto-2-progra-1\\2do Proyecto programacion 1 2024\\2do Proyecto programacion 1 2024\\Source.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{BB2BAEC3-4E12-453D-8441-040D85E3EDE1}|2do Proyecto programacion 1 2024\\2do Proyecto programacion 1 2024.vcxproj|solutionrelative:2do Proyecto programacion 1 2024\\Source.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BB2BAEC3-4E12-453D-8441-040D85E3EDE1}|2do Proyecto programacion 1 2024\\2do Proyecto programacion 1 2024.vcxproj|D:\\GitHub\\Proyecto #2 progra 1\\Proyecto-2-progra-1\\2do Proyecto programacion 1 2024\\2do Proyecto programacion 1 2024\\List.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{BB2BAEC3-4E12-453D-8441-040D85E3EDE1}|2do Proyecto programacion 1 2024\\2do Proyecto programacion 1 2024.vcxproj|solutionrelative:2do Proyecto programacion 1 2024\\List.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BB2BAEC3-4E12-453D-8441-040D85E3EDE1}|2do Proyecto programacion 1 2024\\2do Proyecto programacion 1 2024.vcxproj|D:\\GitHub\\Proyecto #2 progra 1\\Proyecto-2-progra-1\\2do Proyecto programacion 1 2024\\2do Proyecto programacion 1 2024\\Node.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{BB2BAEC3-4E12-453D-8441-040D85E3EDE1}|2do Proyecto programacion 1 2024\\2do Proyecto programacion 1 2024.vcxproj|solutionrelative:2do Proyecto programacion 1 2024\\Node.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,17 +30,68 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Node.h",
+              "DocumentMoniker": "D:\\GitHub\\Proyecto #2 progra 1\\Proyecto-2-progra-1\\2do Proyecto programacion 1 2024\\2do Proyecto programacion 1 2024\\Node.h",
+              "RelativeDocumentMoniker": "2do Proyecto programacion 1 2024\\Node.h",
+              "ToolTip": "D:\\GitHub\\Proyecto #2 progra 1\\Proyecto-2-progra-1\\2do Proyecto programacion 1 2024\\2do Proyecto programacion 1 2024\\Node.h",
+              "RelativeToolTip": "2do Proyecto programacion 1 2024\\Node.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-10-08T04:45:54.296Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "List.h",
+              "DocumentMoniker": "D:\\GitHub\\Proyecto #2 progra 1\\Proyecto-2-progra-1\\2do Proyecto programacion 1 2024\\2do Proyecto programacion 1 2024\\List.h",
+              "RelativeDocumentMoniker": "2do Proyecto programacion 1 2024\\List.h",
+              "ToolTip": "D:\\GitHub\\Proyecto #2 progra 1\\Proyecto-2-progra-1\\2do Proyecto programacion 1 2024\\2do Proyecto programacion 1 2024\\List.h",
+              "RelativeToolTip": "2do Proyecto programacion 1 2024\\List.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-10-08T04:45:48.595Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "App.cpp",
+              "DocumentMoniker": "D:\\GitHub\\Proyecto #2 progra 1\\Proyecto-2-progra-1\\2do Proyecto programacion 1 2024\\2do Proyecto programacion 1 2024\\App.cpp",
+              "RelativeDocumentMoniker": "2do Proyecto programacion 1 2024\\App.cpp",
+              "ToolTip": "D:\\GitHub\\Proyecto #2 progra 1\\Proyecto-2-progra-1\\2do Proyecto programacion 1 2024\\2do Proyecto programacion 1 2024\\App.cpp",
+              "RelativeToolTip": "2do Proyecto programacion 1 2024\\App.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-10-08T04:48:46.447Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "App.h",
+              "DocumentMoniker": "D:\\GitHub\\Proyecto #2 progra 1\\Proyecto-2-progra-1\\2do Proyecto programacion 1 2024\\2do Proyecto programacion 1 2024\\App.h",
+              "RelativeDocumentMoniker": "2do Proyecto programacion 1 2024\\App.h",
+              "ToolTip": "D:\\GitHub\\Proyecto #2 progra 1\\Proyecto-2-progra-1\\2do Proyecto programacion 1 2024\\2do Proyecto programacion 1 2024\\App.h",
+              "RelativeToolTip": "2do Proyecto programacion 1 2024\\App.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABoAAAAKAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-10-08T04:44:11.785Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "Source.cpp",
               "DocumentMoniker": "D:\\GitHub\\Proyecto #2 progra 1\\Proyecto-2-progra-1\\2do Proyecto programacion 1 2024\\2do Proyecto programacion 1 2024\\Source.cpp",
               "RelativeDocumentMoniker": "2do Proyecto programacion 1 2024\\Source.cpp",
               "ToolTip": "D:\\GitHub\\Proyecto #2 progra 1\\Proyecto-2-progra-1\\2do Proyecto programacion 1 2024\\2do Proyecto programacion 1 2024\\Source.cpp",
               "RelativeToolTip": "2do Proyecto programacion 1 2024\\Source.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABcAAAABAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAUAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-09-28T23:11:43.053Z",
               "EditorCaption": ""
