@@ -5,13 +5,11 @@ App::App()
     
     MenuTexture.loadFromFile("Imagenes/Menu.png");
     Menu.setTexture(MenuTexture);
-    CreateMenuButton();
+    CreateMenuButtons();
     Window.create(sf::VideoMode(1380, 720), "Rutas Turísticas");
     MapTexture.loadFromFile("Imagenes/Mapa.png");
     Map.setTexture(MapTexture);
-    font.loadFromFile("Fuentes/Retro_Gaming.ttf");
     CreateMapButtons();
-
 }
 
 void App::Start()
@@ -43,15 +41,22 @@ void App::DrawMenu()
                        
                         return;
                     }
+                    if (ExitButton.getGlobalBounds().contains(mousePos)) {
+
+                        Window.close();
+                    }
+
+                    Vector2i pixelPos = Mouse::getPosition(Window);
+                    Vector2f worldPos = Window.mapPixelToCoords(pixelPos);
+                    cout << "Coordenadas del clic: X = " << worldPos.x << ", Y = " << worldPos.y << std::endl;
                 }
             }
         }
 
-       
         Window.clear(Color::Black);
         Window.draw(Menu);
         Window.draw(StartButton);
-        Window.draw(StartButtonText);
+        Window.draw(ExitButton);
         Window.display();
     }
 }
@@ -73,7 +78,7 @@ void App::DrawMap()
 
 
                     for (int i = 0; i < 6; i++) {
-                        if (buttons[i].getGlobalBounds().contains(mousePos)) {
+                        if (MapButtons[i].getGlobalBounds().contains(mousePos)) {
                             HandleButtonClick(i);
                         }
                     }
@@ -84,64 +89,37 @@ void App::DrawMap()
         Window.clear();
         Window.draw(Map);
         for (int i = 0; i < 6; i++) {
-            Window.draw(buttons[i]);
-            Window.draw(buttonTexts[i]);
+            Window.draw(MapButtons[i]);
         }
         Window.display();
     }
 
 }
 
-void App::CreateMenuButton()
+void App::CreateMenuButtons()
 {
-    
-    float PositionX = ((1380 - 200) / 2);
-    float PositionY = (((720 - 50) / 2) + 100);
-    StartButton.setSize(Vector2f(220, 60));
-    StartButton.setFillColor(Color::Color(61, 142, 152));
+    float PositionX = 72;
+    float PositionY = 391;
+    StartButton.setSize(Vector2f(278.8, 107.9));
+    StartButton.setFillColor(Color::Transparent);
     StartButton.setPosition(PositionX, PositionY);
 
-
-    StartButtonText.setFont(font);
-    StartButtonText.setString("Iniciar");
-    StartButtonText.setCharacterSize(49);
-    StartButtonText.setFillColor(Color::White);
-    StartButtonText.setPosition(PositionX+5,PositionY);
+    float PositionY2 = 540.1;
+    ExitButton.setSize(Vector2f(278.8, 107.9));
+    ExitButton.setFillColor(Color::Transparent);
+    ExitButton.setPosition(PositionX, PositionY2);
 }
 
 void App::CreateMapButtons()
 {
-    float PossitionX = 1130.0;
-    float PossitionY = 80.0;
-    Color color(61, 142, 152);
+    float PossitionX = 17.5;
+    float PossitionY = 24.1;
     for (int i = 0; i < 6; i++) {
-        buttons[i].setSize(Vector2f(220, 60));
-        buttons[i].setPosition(PossitionX, PossitionY);
-        buttons[i].setFillColor(color);
-        PossitionY += 100;
+        MapButtons[i].setSize(Vector2f(239.9, 82.2));
+        MapButtons[i].setPosition(PossitionX, PossitionY);
+        MapButtons[i].setFillColor(Color::Transparent);
+        PossitionY += 119.2;
     }
-
-    buttonTexts[0].setString("Crear una nueva ruta");
-    buttonTexts[0].setCharacterSize(16);
-    buttonTexts[1].setString("Seleccionar color");
-    buttonTexts[1].setCharacterSize(18);
-    buttonTexts[2].setString("Guardar ruta");
-    buttonTexts[2].setCharacterSize(23);
-    buttonTexts[3].setString("Cargar rutas");
-    buttonTexts[3].setCharacterSize(23);
-    buttonTexts[4].setString("Editar rutas");
-    buttonTexts[4].setCharacterSize(23);
-    buttonTexts[5].setString("Salir");
-    buttonTexts[5].setCharacterSize(25);
-
-    for (int i = 0; i < 6; i++) {
-        buttonTexts[i].setFont(font);
-        buttonTexts[i].setFillColor(Color::White);
-        FloatRect textBounds = buttonTexts[i].getLocalBounds();
-        buttonTexts[i].setOrigin(textBounds.left + textBounds.width / 2.0f, textBounds.top + textBounds.height / 2.0f);
-        buttonTexts[i].setPosition(buttons[i].getPosition().x + buttons[i].getSize().x / 2.0f, buttons[i].getPosition().y + buttons[i].getSize().y / 2.0f);
-    }
-    
 }
 
 
@@ -163,8 +141,7 @@ void App::HandleButtonClick(int buttonNumber) {
         printf("Editar rutas clicado\n");
         break;
     case 5:
-        printf("Salir clicado\n");
-        Window.close();
+        Start();
         break;
     default:
         break;

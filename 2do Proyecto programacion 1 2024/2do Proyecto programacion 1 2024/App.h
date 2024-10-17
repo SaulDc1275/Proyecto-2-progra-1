@@ -10,22 +10,20 @@ private:
 	Texture MenuTexture;
 	Sprite Menu;
 	RectangleShape StartButton;
-	Text StartButtonText;
+	RectangleShape ExitButton;
 	RenderWindow Window;
 	Texture MapTexture;
 	Sprite Map;
-	RectangleShape buttons[6];
-	Text buttonTexts[6];
-	Font font;
-
+	RectangleShape MapButtons[6];
 
 public:
+
 
 	App();
 	void Start();
 	void DrawMenu();
 	void DrawMap();
-	void CreateMenuButton();
+	void CreateMenuButtons();
 	void CreateMapButtons();
 	void HandleButtonClick(int buttonIndex);
 };
