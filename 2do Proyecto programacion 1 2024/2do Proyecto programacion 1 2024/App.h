@@ -1,8 +1,8 @@
 #pragma once
-#include <SFML/Graphics.hpp>
 #include <iostream>
+#include "List.h"
 using namespace std;
-using namespace sf;
+
 class App
 {
 private:
@@ -15,6 +15,7 @@ private:
 	Texture MapTexture;
 	Sprite Map;
 	RectangleShape MapButtons[6];
+	List<CircleShape> Rute;
 
 public:
 

@@ -82,6 +82,12 @@ void App::DrawMap()
                             HandleButtonClick(i);
                         }
                     }
+                    CircleShape circle(10);
+                    circle.setPosition(mousePos);
+                    circle.setFillColor(Color::Red);
+
+                    
+                    Rute.insertLast(circle);
                 }
             }
         }
@@ -91,6 +97,7 @@ void App::DrawMap()
         for (int i = 0; i < 6; i++) {
             Window.draw(MapButtons[i]);
         }
+        Rute.DrawList(Window);
         Window.display();
     }
 

@@ -1,1 +1,35 @@
-﻿  2do Proyecto programacion 1 2024.vcxproj -> D:\GitHub\Proyecto #2 progra 1\Proyecto-2-progra-1\2do Proyecto programacion 1 2024\x64\Debug\2do Proyecto programacion 1 2024.exe
+﻿  App.cpp
+D:\GitHub\Proyecto (110,41): warning C4305: 'argumento': truncamiento de 'double' a 'T'
+D:\GitHub\Proyecto (110,41): warning C4305:         with
+D:\GitHub\Proyecto (110,41): warning C4305:         [
+D:\GitHub\Proyecto (110,41): warning C4305:             T=float
+D:\GitHub\Proyecto (110,41): warning C4305:         ]
+D:\GitHub\Proyecto (110,34): warning C4305: 'argumento': truncamiento de 'double' a 'T'
+D:\GitHub\Proyecto (110,34): warning C4305:         with
+D:\GitHub\Proyecto (110,34): warning C4305:         [
+D:\GitHub\Proyecto (110,34): warning C4305:             T=float
+D:\GitHub\Proyecto (110,34): warning C4305:         ]
+D:\GitHub\Proyecto (114,22): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
+D:\GitHub\Proyecto (115,40): warning C4305: 'argumento': truncamiento de 'double' a 'T'
+D:\GitHub\Proyecto (115,40): warning C4305:         with
+D:\GitHub\Proyecto (115,40): warning C4305:         [
+D:\GitHub\Proyecto (115,40): warning C4305:             T=float
+D:\GitHub\Proyecto (115,40): warning C4305:         ]
+D:\GitHub\Proyecto (115,33): warning C4305: 'argumento': truncamiento de 'double' a 'T'
+D:\GitHub\Proyecto (115,33): warning C4305:         with
+D:\GitHub\Proyecto (115,33): warning C4305:         [
+D:\GitHub\Proyecto (115,33): warning C4305:             T=float
+D:\GitHub\Proyecto (115,33): warning C4305:         ]
+D:\GitHub\Proyecto (123,22): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
+D:\GitHub\Proyecto (125,47): warning C4305: 'argumento': truncamiento de 'double' a 'T'
+D:\GitHub\Proyecto (125,47): warning C4305:         with
+D:\GitHub\Proyecto (125,47): warning C4305:         [
+D:\GitHub\Proyecto (125,47): warning C4305:             T=float
+D:\GitHub\Proyecto (125,47): warning C4305:         ]
+D:\GitHub\Proyecto (125,40): warning C4305: 'argumento': truncamiento de 'double' a 'T'
+D:\GitHub\Proyecto (125,40): warning C4305:         with
+D:\GitHub\Proyecto (125,40): warning C4305:         [
+D:\GitHub\Proyecto (125,40): warning C4305:             T=float
+D:\GitHub\Proyecto (125,40): warning C4305:         ]
+D:\GitHub\Proyecto (128,23): warning C4305: '+=': truncamiento de 'double' a 'float'
+  2do Proyecto programacion 1 2024.vcxproj -> D:\GitHub\Proyecto #2 progra 1\Proyecto-2-progra-1\2do Proyecto programacion 1 2024\x64\Debug\2do Proyecto programacion 1 2024.exe
