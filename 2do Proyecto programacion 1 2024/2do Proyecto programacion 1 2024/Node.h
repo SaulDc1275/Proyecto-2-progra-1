@@ -3,12 +3,11 @@
 using namespace sf;
 
 template <typename Tipe>
-class Node
+struct Node
 {
-public:
 	Tipe value;
 	Node<Tipe>* next;
-	Node<Tipe>* previous;
-	Node(Tipe value) : value(value), next(nullptr), previous(nullptr) {};
+	Node<Tipe>* prev;
+	Node(Tipe value) : value(value), next(nullptr), prev(nullptr) {};
 };
 

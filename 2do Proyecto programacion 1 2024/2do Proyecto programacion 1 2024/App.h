@@ -1,6 +1,6 @@
 #pragma once
 #include <iostream>
-#include "List.h"
+#include "Rute.h"
 using namespace std;
 
 class App
@@ -15,8 +15,10 @@ private:
 	Texture MapTexture;
 	Sprite Map;
 	RectangleShape MapButtons[6];
-	List<CircleShape> Rute;
-
+	Rute Rute;
+	Texture SaveTexture, LoadTexture, DeleteTexture, DeletePointTexture, SelectRoute;
+	bool isClicked;
+	int click;
 public:
 
 
@@ -27,5 +29,6 @@ public:
 	void CreateMenuButtons();
 	void CreateMapButtons();
 	void HandleButtonClick(int buttonIndex);
+	void CreateRute(Vector2f mousePos);
 };
 

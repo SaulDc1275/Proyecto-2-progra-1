@@ -131,13 +131,15 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="App.cpp" />
-    <ClCompile Include="List.cpp" />
+    <ClCompile Include="Coordinate.cpp" />
+    <ClCompile Include="Rute.cpp" />
     <ClCompile Include="Node.cpp" />
     <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="App.h" />
-    <ClInclude Include="List.h" />
+    <ClInclude Include="Coordinate.h" />
+    <ClInclude Include="Rute.h" />
     <ClInclude Include="Node.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
