@@ -1,6 +1,6 @@
 #pragma once
 #include <iostream>
-#include "Rute.h"
+#include "Routes.h"
 using namespace std;
 
 class App
@@ -14,11 +14,17 @@ private:
 	RenderWindow Window;
 	Texture MapTexture;
 	Sprite Map;
-	RectangleShape MapButtons[6];
-	Rute Rute;
-	Texture SaveTexture, LoadTexture, DeleteTexture, DeletePointTexture, SelectRoute;
+	Routes ListOfRoutes;
+	Texture SaveTexture, LoadTexture, DeleteTexture, DeletePointTexture, SelectTexture, GoBackTexture, CreateTexture;
+	Sprite SaveSprite, LoadSprite, DeleteSprite, DeletePointSprite, SelectSprite, GoBackSprite, CreateSprite;
+	Texture ColorOrangeT, ColorPurpleT, ColorBlueT, ColorRedT, ColorYellowT, ColorGreenT;
+	Sprite ColorOrangeS, ColorPurpleS, ColorBlueS, ColorRedS, ColorYellowS, ColorGreenS;
 	bool isClicked;
 	int click;
+	bool isCreatingRoute = false;
+	Node<Route>* activeRoute = nullptr;
+	
+	
 public:
 
 
@@ -28,7 +34,9 @@ public:
 	void DrawMap();
 	void CreateMenuButtons();
 	void CreateMapButtons();
-	void HandleButtonClick(int buttonIndex);
-	void CreateRute(Vector2f mousePos);
+	void CreatePallette();
+	void CreatePoint(Vector2f mousePos);
+	void DrawMapButtons(RenderWindow &window);
+	void HandleMapButtons(Vector2f mousePos);
 };
 

@@ -1,47 +1,69 @@
 ﻿  App.cpp
-D:\GitHub\Proyecto (116,41): warning C4305: 'argumento': truncamiento de 'double' a 'T'
-D:\GitHub\Proyecto (116,41): warning C4305:         with
-D:\GitHub\Proyecto (116,41): warning C4305:         [
-D:\GitHub\Proyecto (116,41): warning C4305:             T=float
-D:\GitHub\Proyecto (116,41): warning C4305:         ]
-D:\GitHub\Proyecto (116,34): warning C4305: 'argumento': truncamiento de 'double' a 'T'
-D:\GitHub\Proyecto (116,34): warning C4305:         with
-D:\GitHub\Proyecto (116,34): warning C4305:         [
-D:\GitHub\Proyecto (116,34): warning C4305:             T=float
-D:\GitHub\Proyecto (116,34): warning C4305:         ]
-D:\GitHub\Proyecto (120,22): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
-D:\GitHub\Proyecto (121,40): warning C4305: 'argumento': truncamiento de 'double' a 'T'
-D:\GitHub\Proyecto (121,40): warning C4305:         with
-D:\GitHub\Proyecto (121,40): warning C4305:         [
-D:\GitHub\Proyecto (121,40): warning C4305:             T=float
-D:\GitHub\Proyecto (121,40): warning C4305:         ]
-D:\GitHub\Proyecto (121,33): warning C4305: 'argumento': truncamiento de 'double' a 'T'
-D:\GitHub\Proyecto (121,33): warning C4305:         with
-D:\GitHub\Proyecto (121,33): warning C4305:         [
-D:\GitHub\Proyecto (121,33): warning C4305:             T=float
-D:\GitHub\Proyecto (121,33): warning C4305:         ]
-D:\GitHub\Proyecto (129,22): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
-D:\GitHub\Proyecto (131,47): warning C4305: 'argumento': truncamiento de 'double' a 'T'
-D:\GitHub\Proyecto (131,47): warning C4305:         with
-D:\GitHub\Proyecto (131,47): warning C4305:         [
-D:\GitHub\Proyecto (131,47): warning C4305:             T=float
-D:\GitHub\Proyecto (131,47): warning C4305:         ]
-D:\GitHub\Proyecto (131,40): warning C4305: 'argumento': truncamiento de 'double' a 'T'
-D:\GitHub\Proyecto (131,40): warning C4305:         with
-D:\GitHub\Proyecto (131,40): warning C4305:         [
-D:\GitHub\Proyecto (131,40): warning C4305:             T=float
-D:\GitHub\Proyecto (131,40): warning C4305:         ]
-D:\GitHub\Proyecto (134,23): warning C4305: '+=': truncamiento de 'double' a 'float'
-D:\GitHub\Proyecto (182,49): warning C4244: 'argumento': conversión de 'T' a 'int'; posible pérdida de datos
-D:\GitHub\Proyecto (182,49): warning C4244:         with
-D:\GitHub\Proyecto (182,49): warning C4244:         [
-D:\GitHub\Proyecto (182,49): warning C4244:             T=float
-D:\GitHub\Proyecto (182,49): warning C4244:         ]
-D:\GitHub\Proyecto (182,37): warning C4244: 'argumento': conversión de 'T' a 'int'; posible pérdida de datos
-D:\GitHub\Proyecto (182,37): warning C4244:         with
-D:\GitHub\Proyecto (182,37): warning C4244:         [
-D:\GitHub\Proyecto (182,37): warning C4244:             T=float
-D:\GitHub\Proyecto (182,37): warning C4244:         ]
-  Source.cpp
-  Generando código...
+D:\GitHub\Proyecto (112,41): warning C4305: 'argumento': truncamiento de 'double' a 'T'
+D:\GitHub\Proyecto (112,41): warning C4305:         with
+D:\GitHub\Proyecto (112,41): warning C4305:         [
+D:\GitHub\Proyecto (112,41): warning C4305:             T=float
+D:\GitHub\Proyecto (112,41): warning C4305:         ]
+D:\GitHub\Proyecto (112,34): warning C4305: 'argumento': truncamiento de 'double' a 'T'
+D:\GitHub\Proyecto (112,34): warning C4305:         with
+D:\GitHub\Proyecto (112,34): warning C4305:         [
+D:\GitHub\Proyecto (112,34): warning C4305:             T=float
+D:\GitHub\Proyecto (112,34): warning C4305:         ]
+D:\GitHub\Proyecto (116,22): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
+D:\GitHub\Proyecto (117,40): warning C4305: 'argumento': truncamiento de 'double' a 'T'
+D:\GitHub\Proyecto (117,40): warning C4305:         with
+D:\GitHub\Proyecto (117,40): warning C4305:         [
+D:\GitHub\Proyecto (117,40): warning C4305:             T=float
+D:\GitHub\Proyecto (117,40): warning C4305:         ]
+D:\GitHub\Proyecto (117,33): warning C4305: 'argumento': truncamiento de 'double' a 'T'
+D:\GitHub\Proyecto (117,33): warning C4305:         with
+D:\GitHub\Proyecto (117,33): warning C4305:         [
+D:\GitHub\Proyecto (117,33): warning C4305:             T=float
+D:\GitHub\Proyecto (117,33): warning C4305:         ]
+D:\GitHub\Proyecto (159,35): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+D:\GitHub\Proyecto (159,30): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+D:\GitHub\Proyecto (160,33): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+D:\GitHub\Proyecto (160,27): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+D:\GitHub\Proyecto (162,28): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+D:\GitHub\Proyecto (163,31): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+D:\GitHub\Proyecto (163,25): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+D:\GitHub\Proyecto (165,28): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+D:\GitHub\Proyecto (166,31): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+D:\GitHub\Proyecto (166,25): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+D:\GitHub\Proyecto (168,37): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+D:\GitHub\Proyecto (168,30): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+D:\GitHub\Proyecto (169,33): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+D:\GitHub\Proyecto (169,27): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+D:\GitHub\Proyecto (171,35): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+D:\GitHub\Proyecto (171,30): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+D:\GitHub\Proyecto (172,33): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+D:\GitHub\Proyecto (172,27): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+D:\GitHub\Proyecto (174,42): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+D:\GitHub\Proyecto (174,35): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+D:\GitHub\Proyecto (175,38): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+D:\GitHub\Proyecto (175,32): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+D:\GitHub\Proyecto (177,35): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+D:\GitHub\Proyecto (177,30): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+D:\GitHub\Proyecto (178,33): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+D:\GitHub\Proyecto (178,27): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+D:\GitHub\Proyecto (180,27): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+D:\GitHub\Proyecto (182,30): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+D:\GitHub\Proyecto (184,36): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+D:\GitHub\Proyecto (184,30): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+D:\GitHub\Proyecto (186,36): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+D:\GitHub\Proyecto (186,29): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+D:\GitHub\Proyecto (188,34): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+D:\GitHub\Proyecto (188,28): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+D:\GitHub\Proyecto (190,37): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+D:\GitHub\Proyecto (190,30): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+D:\GitHub\Proyecto (206,49): warning C4244: 'argumento': conversión de 'T' a 'int'; posible pérdida de datos
+D:\GitHub\Proyecto (206,49): warning C4244:         with
+D:\GitHub\Proyecto (206,49): warning C4244:         [
+D:\GitHub\Proyecto (206,49): warning C4244:             T=float
+D:\GitHub\Proyecto (206,49): warning C4244:         ]
+D:\GitHub\Proyecto (206,37): warning C4244: 'argumento': conversión de 'T' a 'int'; posible pérdida de datos
+D:\GitHub\Proyecto (206,37): warning C4244:         with
+D:\GitHub\Proyecto (206,37): warning C4244:         [
+D:\GitHub\Proyecto (206,37): warning C4244:             T=float
+D:\GitHub\Proyecto (206,37): warning C4244:         ]
   2do Proyecto programacion 1 2024.vcxproj -> D:\GitHub\Proyecto #2 progra 1\Proyecto-2-progra-1\2do Proyecto programacion 1 2024\x64\Debug\2do Proyecto programacion 1 2024.exe

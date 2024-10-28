@@ -132,15 +132,17 @@
   <ItemGroup>
     <ClCompile Include="App.cpp" />
     <ClCompile Include="Coordinate.cpp" />
-    <ClCompile Include="Rute.cpp" />
+    <ClCompile Include="Route.cpp" />
     <ClCompile Include="Node.cpp" />
+    <ClCompile Include="Routes.cpp" />
     <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="App.h" />
     <ClInclude Include="Coordinate.h" />
-    <ClInclude Include="Rute.h" />
+    <ClInclude Include="Route.h" />
     <ClInclude Include="Node.h" />
+    <ClInclude Include="Routes.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
