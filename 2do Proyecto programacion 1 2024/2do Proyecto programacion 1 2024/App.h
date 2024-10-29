@@ -19,8 +19,7 @@ private:
 	Sprite SaveSprite, LoadSprite, DeleteSprite, DeletePointSprite, SelectSprite, GoBackSprite, CreateSprite;
 	Texture ColorOrangeT, ColorPurpleT, ColorBlueT, ColorRedT, ColorYellowT, ColorGreenT;
 	Sprite ColorOrangeS, ColorPurpleS, ColorBlueS, ColorRedS, ColorYellowS, ColorGreenS;
-	bool isClicked;
-	int click;
+	bool canCreate = false;
 	bool isCreatingRoute = false;
 	Node<Route>* activeRoute = nullptr;
 	

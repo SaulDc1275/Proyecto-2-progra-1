@@ -22,4 +22,9 @@ int Coordinate::getY() const {
 	return y;
 }
 
+Coordinate::~Coordinate()
+{
+
+}
+
 

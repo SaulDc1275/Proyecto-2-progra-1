@@ -10,8 +10,6 @@ App::App()
     Map.setTexture(MapTexture);
     CreateMapButtons();
     CreatePallette();
-    isClicked = false;
-    click = 0;
 
 }
 
@@ -20,8 +18,6 @@ void App::Start()
     DrawMenu();
     DrawMap();
 }
-
-
 
 void App::DrawMenu()
 {
@@ -78,24 +74,20 @@ void App::DrawMap()
             if (event.type == Event::MouseButtonPressed) {
                 if (event.mouseButton.button == Mouse::Left) {
                     Vector2f mousePos = Window.mapPixelToCoords(Mouse::getPosition(Window));
-
-
                     HandleMapButtons(mousePos);
-                    if (isCreatingRoute) {
-                        CreatePoint(mousePos);
+                    if (activeRoute != nullptr) { // Verifica si hay una ruta activa
+                        if (canCreate) {
+                            CreatePoint(mousePos); // Crear un punto si se puede
+                        }
+                        else {
+                            activeRoute->value.DeleteAPoint(mousePos); // Intentar eliminar un punto
+                        }
                     }
-                    
                     Vector2i pixelPos = Mouse::getPosition(Window);
-                    Vector2f worldPos = Window.mapPixelToCoords(pixelPos);
-                    cout << "Coordenadas del clic: X = " << worldPos.x << ", Y = " << worldPos.y << std::endl;
-
-                   
-                    
+                    cout << "Coordenadas del clic: X = " << pixelPos.x << ", Y = " << pixelPos.y << endl;   
                 }
-                
             }
         }
-
         Window.clear();
         Window.draw(Map);
         DrawMapButtons(Window);
@@ -194,15 +186,15 @@ void App::DrawMapButtons(RenderWindow& window)
 
 void App::CreatePoint(Vector2f mousePos)
 {
-    if (isCreatingRoute && mousePos.x >= 280 && mousePos.x <= 1380 && mousePos.y >= 1 && mousePos.y <= 720) {
-
-
+    // Verifica que la posición del mouse esté dentro del área del mapa
+    if (mousePos.x >= 280 && mousePos.x <= 1380 && mousePos.y >= 1 && mousePos.y <= 720) {
+        // Asegúrate de que haya una ruta activa
         if (activeRoute == nullptr) {
             printf("Error: No hay una ruta activa para agregar el punto.\n");
             return;
         }
 
-
+        // Crear una nueva coordenada y agregarla a la ruta activa
         Coordinate newCoord(mousePos.x, mousePos.y);
         activeRoute->value.insertLast(newCoord);
 
@@ -211,34 +203,26 @@ void App::CreatePoint(Vector2f mousePos)
 }
 
 
-
 void App::HandleMapButtons(Vector2f mousePos)
 {
     if (CreateSprite.getGlobalBounds().contains(mousePos)) {
-        printf("Boton de creacion de ruta clicado\n");
-
-        if (!isCreatingRoute) {
-            isCreatingRoute = true;
+        canCreate = true;
+        printf("Botón de creación de ruta clicado\n");
+        if (canCreate) {
+            if (activeRoute != nullptr) {
+                printf("Ruta anterior finalizada y guardada.\n");
+            }
 
             Route newRoute;
-            newRoute.isDrawn = true;
 
             ListOfRoutes.addRoute(newRoute);
 
-            // Configurar activeRoute para que apunte a la última ruta en ListOfRoutes
             activeRoute = ListOfRoutes.first;
             while (activeRoute->next != nullptr) {
                 activeRoute = activeRoute->next;
             }
-
             printf("Nueva ruta creada y lista para agregar puntos.\n");
         }
-        else {
-            isCreatingRoute = false;
-
-            printf("Ruta actual finalizada.\n");
-        }
-        
     }
     else if (SaveSprite.getGlobalBounds().contains(mousePos)) {
         cout << "Guardar Rutas" << endl;
@@ -248,12 +232,37 @@ void App::HandleMapButtons(Vector2f mousePos)
     }
     else if (SelectSprite.getGlobalBounds().contains(mousePos)) {
         cout << "Cambiar ruta" << endl;
+        if (activeRoute != nullptr) {
+            if (activeRoute->next != nullptr)
+                activeRoute = activeRoute->next;
+            else
+                activeRoute = ListOfRoutes.first;
+        }
     }
     else if (DeleteSprite.getGlobalBounds().contains(mousePos)) {
-        cout << "Eliminar ruta" << endl;
+        
+        if (activeRoute != nullptr) {
+            Node<Route>* routeToDelete = activeRoute;
+            if (activeRoute->next != nullptr)
+                activeRoute = activeRoute->next;
+            else
+                activeRoute = ListOfRoutes.first;
+            ListOfRoutes.DeleteCurrentRoute(routeToDelete);
+            cout << "Eliminar ruta" << endl;
+            if (ListOfRoutes.size == 0) {
+                activeRoute = nullptr;
+            }
+        }
     }
     else if (DeletePointSprite.getGlobalBounds().contains(mousePos)) {
+        if (canCreate == true) {
+            canCreate = false;
+        }
+        else {
+            canCreate = true;
+        }
         cout << "Eliminar punto" << endl;
+
     }
     else if (GoBackSprite.getGlobalBounds().contains(mousePos)) {
         cout << "Regresar" << endl;
@@ -261,20 +270,38 @@ void App::HandleMapButtons(Vector2f mousePos)
     }
     else if (ColorRedS.getGlobalBounds().contains(mousePos)) {
         cout << "Red" << endl;
+        if (activeRoute != nullptr) {
+            activeRoute->value.color = Color::Red;
+        }
     }
     else if (ColorOrangeS.getGlobalBounds().contains(mousePos)) {
         cout << "Orange" << endl;
+        if (activeRoute != nullptr) {
+            activeRoute->value.color = Color(255, 138, 0);
+        }
     }
     else if (ColorYellowS.getGlobalBounds().contains(mousePos)) {
         cout << "Yellow" << endl;
+        if (activeRoute != nullptr) {
+            activeRoute->value.color = Color::Yellow;
+        }
     }
     else if (ColorGreenS.getGlobalBounds().contains(mousePos)) {
-        cout << "Greem" << endl;
+        cout << "Green" << endl;
+        if (activeRoute != nullptr) {
+            activeRoute->value.color = Color::Green;
+        }
     }
     else if (ColorBlueS.getGlobalBounds().contains(mousePos)) {
         cout << "Blue" << endl;
+        if (activeRoute != nullptr) {
+            activeRoute->value.color = Color::Blue;
+        }
     }
     else if (ColorPurpleS.getGlobalBounds().contains(mousePos)) {
         cout << "Purple" << endl;
+        if (activeRoute != nullptr) {
+            activeRoute->value.color = Color(170, 142, 214);
+        }
     }
 }
