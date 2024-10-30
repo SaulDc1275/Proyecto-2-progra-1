@@ -74,24 +74,22 @@ void App::DrawMap()
             if (event.type == Event::MouseButtonPressed) {
                 if (event.mouseButton.button == Mouse::Left) {
                     Vector2f mousePos = Window.mapPixelToCoords(Mouse::getPosition(Window));
-                    HandleMapButtons(mousePos);
-                    if (activeRoute != nullptr) { // Verifica si hay una ruta activa
+                    HandleMapButtons(Window, mousePos);
+                    if (activeRoute != nullptr) {
                         if (canCreate) {
-                            CreatePoint(mousePos); // Crear un punto si se puede
+                            CreatePoint(mousePos);
                         }
                         else {
-                            activeRoute->value.DeleteAPoint(mousePos); // Intentar eliminar un punto
+                            activeRoute->value.DeleteAPoint(mousePos);
                         }
-                    }
-                    Vector2i pixelPos = Mouse::getPosition(Window);
-                    cout << "Coordenadas del clic: X = " << pixelPos.x << ", Y = " << pixelPos.y << endl;   
+                    }  
                 }
             }
         }
         Window.clear();
         Window.draw(Map);
         DrawMapButtons(Window);
-        ListOfRoutes.Draw(Window);
+        ListOfRoutes.DrawRoutes(Window, activeRoute);
         Window.display();
     }
 
@@ -146,6 +144,7 @@ void App::CreatePallette()
     ColorYellowS.setTexture(ColorYellowT);
     ColorGreenS.setTexture(ColorGreenT);
 }
+
 void App::DrawMapButtons(RenderWindow& window)
 {
     CreateSprite.setPosition(6.2, 14.9);
@@ -186,58 +185,52 @@ void App::DrawMapButtons(RenderWindow& window)
 
 void App::CreatePoint(Vector2f mousePos)
 {
-    // Verifica que la posición del mouse esté dentro del área del mapa
     if (mousePos.x >= 280 && mousePos.x <= 1380 && mousePos.y >= 1 && mousePos.y <= 720) {
-        // Asegúrate de que haya una ruta activa
         if (activeRoute == nullptr) {
             printf("Error: No hay una ruta activa para agregar el punto.\n");
             return;
         }
-
-        // Crear una nueva coordenada y agregarla a la ruta activa
+        string pointName = getTextInput(Window, "Ingrese el nombre del nuevo punto: ");
         Coordinate newCoord(mousePos.x, mousePos.y);
+        newCoord.setName(pointName);
         activeRoute->value.insertLast(newCoord);
-
         printf("Coordenada agregada a la ruta activa: (%.2f, %.2f)\n", mousePos.x, mousePos.y);
+        cout << "NOMBRE DEL PUNTO: " << newCoord.getName() << endl;
     }
 }
 
 
-void App::HandleMapButtons(Vector2f mousePos)
+void App::HandleMapButtons(RenderWindow &Window, Vector2f mousePos)
 {
     if (CreateSprite.getGlobalBounds().contains(mousePos)) {
         canCreate = true;
-        printf("Botón de creación de ruta clicado\n");
         if (canCreate) {
-            if (activeRoute != nullptr) {
-                printf("Ruta anterior finalizada y guardada.\n");
-            }
-
+            string routeName = getTextInput(Window, "Ingrese el nombre de la nueva ruta: ");
+            
             Route newRoute;
-
             ListOfRoutes.addRoute(newRoute);
 
             activeRoute = ListOfRoutes.first;
+            
             while (activeRoute->next != nullptr) {
                 activeRoute = activeRoute->next;
             }
-            printf("Nueva ruta creada y lista para agregar puntos.\n");
+            activeRoute->value.name = routeName;
+            cout << "NOMBRE DE LA RUTA: " << activeRoute->value.name << endl;
         }
     }
     else if (SaveSprite.getGlobalBounds().contains(mousePos)) {
-        cout << "Guardar Rutas" << endl;
     }
     else if (LoadSprite.getGlobalBounds().contains(mousePos)) {
-        cout << "Cargar rutas" << endl;
     }
     else if (SelectSprite.getGlobalBounds().contains(mousePos)) {
-        cout << "Cambiar ruta" << endl;
         if (activeRoute != nullptr) {
             if (activeRoute->next != nullptr)
                 activeRoute = activeRoute->next;
             else
                 activeRoute = ListOfRoutes.first;
         }
+        
     }
     else if (DeleteSprite.getGlobalBounds().contains(mousePos)) {
         
@@ -248,7 +241,6 @@ void App::HandleMapButtons(Vector2f mousePos)
             else
                 activeRoute = ListOfRoutes.first;
             ListOfRoutes.DeleteCurrentRoute(routeToDelete);
-            cout << "Eliminar ruta" << endl;
             if (ListOfRoutes.size == 0) {
                 activeRoute = nullptr;
             }
@@ -261,8 +253,6 @@ void App::HandleMapButtons(Vector2f mousePos)
         else {
             canCreate = true;
         }
-        cout << "Eliminar punto" << endl;
-
     }
     else if (GoBackSprite.getGlobalBounds().contains(mousePos)) {
         cout << "Regresar" << endl;
@@ -304,4 +294,57 @@ void App::HandleMapButtons(Vector2f mousePos)
             activeRoute->value.color = Color(170, 142, 214);
         }
     }
+}
+
+string App::getTextInput(RenderWindow& window, const string& promptMessage)
+{
+    Font font;
+    font.loadFromFile("Fuentes/Retro_Gaming.ttf");
+    RectangleShape dialogBox(sf::Vector2f(400, 150));
+
+    dialogBox.setFillColor(Color(50, 50, 50));
+    dialogBox.setOutlineColor(Color::White);
+    dialogBox.setOutlineThickness(4);
+    dialogBox.setPosition(window.getSize().x / 2 - dialogBox.getSize().x / 2, window.getSize().y / 2 - dialogBox.getSize().y / 2);
+
+    Text promptText(promptMessage, font, 16);
+    promptText.setPosition(dialogBox.getPosition().x + 10, dialogBox.getPosition().y + 10);
+    promptText.setFillColor(Color::White);
+
+    Text userInputText("", font, 18);
+    userInputText.setPosition(dialogBox.getPosition().x + 10, dialogBox.getPosition().y + 60);
+    userInputText.setFillColor(sf::Color::White);
+
+    string inputStr;
+    bool inputActive = true;
+ 
+    while (inputActive) {
+        Event event;
+        while (window.pollEvent(event)) {
+            if (event.type == Event::Closed) {
+                window.close();
+                return "";
+            }
+            else if (event.type == Event::TextEntered) {
+                if (event.text.unicode == '\b') {
+                    if (!inputStr.empty()) {
+                        inputStr.pop_back();
+                    }
+                }
+                else if (event.text.unicode == 13) {
+                    inputActive = false;
+                }
+                else if (event.text.unicode < 128) {
+                    inputStr += static_cast<char>(event.text.unicode);
+                }
+                userInputText.setString(inputStr);
+            }
+        }
+        window.draw(dialogBox);
+        window.draw(promptText);
+        window.draw(userInputText);
+        window.display();
+    }
+    
+    return inputStr;
 }

@@ -15,51 +15,76 @@ void Routes::addRoute(Route& route)
     size++;
 }
 
-void Routes::Draw(RenderWindow& window)
-{
+void Routes::DrawRoutes(RenderWindow& window, Node<Route>* activeRoute) {
     Node<Route>* temp = first;
+    float y = 0;
+    Font font;
+    font.loadFromFile("Fuentes/Retro_Gaming.ttf");
+
     while (temp != nullptr) {
         temp->value.DrawRoute(window);
-        //temp->value.DrawBSpline(window);
+        // Crear el texto para el nombre de la ruta
+        Text routeNameText;
+        routeNameText.setFont(font);
+        routeNameText.setString(temp->value.name);
+        routeNameText.setCharacterSize(15);
+
+        // Verificar si es la ruta activa
+        if (temp == activeRoute) {
+            routeNameText.setFillColor(Color::Cyan); // Color especial para la ruta activa
+            routeNameText.setCharacterSize(15);        // Tamaño más grande para la ruta activa
+            routeNameText.setStyle(Text::Bold);        // Estilo en negrita para la ruta activa
+        }
+        else {
+            routeNameText.setFillColor(temp->value.color);  // Color normal para rutas inactivas
+            routeNameText.setCharacterSize(15);        // Tamaño normal para rutas inactivas
+        }
+
+        // Establecer la posición en la esquina superior derecha del mapa
+        routeNameText.setPosition(290, 10 + y);
+
+        // Dibujar el texto en la ventana
+        window.draw(routeNameText);
+
+        // Aumentar el desplazamiento vertical para la siguiente ruta
+        y += 20;
+
         temp = temp->next;
     }
 }
 
 
 
+
 void Routes::DeleteCurrentRoute(Node<Route>*& activeRoute) {
-    if (activeRoute == nullptr) { // Verifica si hay un nodo activo
+    if (activeRoute == nullptr) {
         printf("No hay una ruta activa para eliminar.\n");
         return;
     }
 
-    // El nodo a eliminar
     Node<Route>* temp = activeRoute;
 
-    // Si el nodo a eliminar es el primero
     if (temp == first) {
-        first = temp->next; // Mueve el inicio de la lista
+        first = temp->next;
         if (first != nullptr) {
-            first->prev = nullptr; // Ajustar el puntero anterior si hay un nuevo primer nodo
+            first->prev = nullptr;
         }
         else {
-            last = nullptr; // Si la lista queda vacía, también actualiza last
+            last = nullptr;
         }
     }
     else {
-        // Conectar el nodo anterior y el siguiente
         if (temp->prev != nullptr) {
-            temp->prev->next = temp->next; // Conectar el anterior
+            temp->prev->next = temp->next;
         }
 
         if (temp->next != nullptr) {
-            temp->next->prev = temp->prev; // Conectar el siguiente
+            temp->next->prev = temp->prev;
         }
         else {
-            last = temp->prev; // Si el nodo a eliminar es el último, actualizar last
+            last = temp->prev;
         }
     }
-
     delete temp;
     size--;
 }

@@ -10,7 +10,7 @@ public:
 
     Routes() : first(nullptr), size(0) {}
     void addRoute(Route& route);
-    void Draw(RenderWindow& window);
+    void DrawRoutes(RenderWindow& window, Node<Route>* activeRoute);
     void DeleteCurrentRoute(Node<Route>*& activeRoute);
 };
 

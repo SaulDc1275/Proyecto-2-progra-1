@@ -22,6 +22,16 @@ int Coordinate::getY() const {
 	return y;
 }
 
+void Coordinate::setName(string name)
+{
+	this->name = name;
+}
+
+string Coordinate::getName()
+{
+	return name;
+}
+
 Coordinate::~Coordinate()
 {
 

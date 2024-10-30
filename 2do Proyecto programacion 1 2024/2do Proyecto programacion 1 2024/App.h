@@ -23,7 +23,6 @@ private:
 	bool isCreatingRoute = false;
 	Node<Route>* activeRoute = nullptr;
 	
-	
 public:
 
 
@@ -36,6 +35,7 @@ public:
 	void CreatePallette();
 	void CreatePoint(Vector2f mousePos);
 	void DrawMapButtons(RenderWindow &window);
-	void HandleMapButtons(Vector2f mousePos);
+	void HandleMapButtons(RenderWindow& Window, Vector2f mousePos);
+	string getTextInput(RenderWindow& window, const string& promptMessage);
 };
 
