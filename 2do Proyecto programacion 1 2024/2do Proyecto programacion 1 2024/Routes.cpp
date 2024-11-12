@@ -23,30 +23,28 @@ void Routes::DrawRoutes(RenderWindow& window, Node<Route>* activeRoute) {
 
     while (temp != nullptr) {
         temp->value.DrawRoute(window);
-        // Crear el texto para el nombre de la ruta
+
         Text routeNameText;
         routeNameText.setFont(font);
         routeNameText.setString(temp->value.name);
         routeNameText.setCharacterSize(15);
 
-        // Verificar si es la ruta activa
+ 
         if (temp == activeRoute) {
-            routeNameText.setFillColor(Color::Cyan); // Color especial para la ruta activa
-            routeNameText.setCharacterSize(15);        // Tamaño más grande para la ruta activa
-            routeNameText.setStyle(Text::Bold);        // Estilo en negrita para la ruta activa
+            routeNameText.setFillColor(Color::Cyan);
+            routeNameText.setCharacterSize(15);
+            routeNameText.setStyle(Text::Bold);
         }
         else {
-            routeNameText.setFillColor(temp->value.color);  // Color normal para rutas inactivas
-            routeNameText.setCharacterSize(15);        // Tamaño normal para rutas inactivas
+            routeNameText.setFillColor(temp->value.color);
+            routeNameText.setCharacterSize(15);
         }
 
-        // Establecer la posición en la esquina superior derecha del mapa
+
         routeNameText.setPosition(290, 10 + y);
 
-        // Dibujar el texto en la ventana
         window.draw(routeNameText);
 
-        // Aumentar el desplazamiento vertical para la siguiente ruta
         y += 20;
 
         temp = temp->next;

@@ -1,2 +1,26 @@
-﻿  Routes.cpp
+﻿  Route.cpp
+D:\GitHub\Proyecto (38,76): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+D:\GitHub\Proyecto (38,49): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+D:\GitHub\Proyecto (43,75): warning C4244: 'argumento': conversión de 'int' a 'T'; posible pérdida de datos
+D:\GitHub\Proyecto (43,75): warning C4244:         with
+D:\GitHub\Proyecto (43,75): warning C4244:         [
+D:\GitHub\Proyecto (43,75): warning C4244:             T=float
+D:\GitHub\Proyecto (43,75): warning C4244:         ]
+D:\GitHub\Proyecto (43,52): warning C4244: 'argumento': conversión de 'int' a 'T'; posible pérdida de datos
+D:\GitHub\Proyecto (43,52): warning C4244:         with
+D:\GitHub\Proyecto (43,52): warning C4244:         [
+D:\GitHub\Proyecto (43,52): warning C4244:             T=float
+D:\GitHub\Proyecto (43,52): warning C4244:         ]
+D:\GitHub\Proyecto (44,87): warning C4244: 'argumento': conversión de 'int' a 'T'; posible pérdida de datos
+D:\GitHub\Proyecto (44,87): warning C4244:         with
+D:\GitHub\Proyecto (44,87): warning C4244:         [
+D:\GitHub\Proyecto (44,87): warning C4244:             T=float
+D:\GitHub\Proyecto (44,87): warning C4244:         ]
+D:\GitHub\Proyecto (44,58): warning C4244: 'argumento': conversión de 'int' a 'T'; posible pérdida de datos
+D:\GitHub\Proyecto (44,58): warning C4244:         with
+D:\GitHub\Proyecto (44,58): warning C4244:         [
+D:\GitHub\Proyecto (44,58): warning C4244:             T=float
+D:\GitHub\Proyecto (44,58): warning C4244:         ]
+D:\GitHub\Proyecto (54,77): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+D:\GitHub\Proyecto (54,48): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
   2do Proyecto programacion 1 2024.vcxproj -> D:\GitHub\Proyecto #2 progra 1\Proyecto-2-progra-1\2do Proyecto programacion 1 2024\x64\Debug\2do Proyecto programacion 1 2024.exe

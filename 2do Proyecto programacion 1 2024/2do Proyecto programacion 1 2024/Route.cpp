@@ -9,8 +9,7 @@ Route::Route()
     first = nullptr;
     last = nullptr;
     size = 0;
-    color = Color::Black;
-   
+    color = Color::White;
     point.setRadius(7);
 }
 
