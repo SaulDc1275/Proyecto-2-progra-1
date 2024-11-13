@@ -14,12 +14,11 @@ public:
 	Node<Coordinate>* first;
 	Node<Coordinate>* last;
 	string name;
+
 	Route();
 	void insertLast(Coordinate newValue);
 	void DrawRoute(RenderWindow& window);
 	void DeleteAPoint(Vector2f mousePos);
-	//void DrawBSpline(RenderWindow& window);
-	//Vector2f DeBoor(float t, int d, int p, float knotVector[]);
 	~Route();
 
 };

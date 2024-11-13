@@ -9,5 +9,6 @@ struct Node
 	Node<Tipe>* next;
 	Node<Tipe>* prev;
 	Node(Tipe value) : value(value), next(nullptr), prev(nullptr) {};
+	Node() : next(nullptr), prev(nullptr) {};
 };
 

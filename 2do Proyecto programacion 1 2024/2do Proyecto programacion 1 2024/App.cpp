@@ -15,8 +15,15 @@ App::App()
 
 void App::Start()
 {
+    
     DrawMenu();
+    ListOfRoutes.LoadFromFile();
+    activeRoute = ListOfRoutes.first;
+    if (ListOfRoutes.first != nullptr) {
+        canCreate = true;
+    }
     DrawMap();
+    
 }
 
 void App::DrawMenu()
@@ -132,55 +139,65 @@ void App::CreateMapButtons()
 void App::CreatePallette()
 {
     ColorOrangeT.loadFromFile("Imagenes/Botones/Color_naranja.png");
-    ColorPurpleT.loadFromFile("Imagenes/Botones/Color_morado.png");
-    ColorBlueT.loadFromFile("Imagenes/Botones/Color_azul.png");
+    ColorPinkT.loadFromFile("Imagenes/Botones/Color_rosado.png");
+    ColorWhiteT.loadFromFile("Imagenes/Botones/Color_blanco.png");
     ColorRedT.loadFromFile("Imagenes/Botones/Color_rojo.png");
     ColorYellowT.loadFromFile("Imagenes/Botones/Color_amarillo.png");
-    ColorGreenT.loadFromFile("Imagenes/Botones/Color_verde.png");
+    ColorBlackT.loadFromFile("Imagenes/Botones/Color_negro.png");
     ColorOrangeS.setTexture(ColorOrangeT);
-    ColorPurpleS.setTexture(ColorPurpleT);
-    ColorBlueS.setTexture(ColorBlueT);
+    ColorPinkS.setTexture(ColorPinkT);
+    ColorWhiteS.setTexture(ColorWhiteT);
     ColorRedS.setTexture(ColorRedT);
     ColorYellowS.setTexture(ColorYellowT);
-    ColorGreenS.setTexture(ColorGreenT);
+    ColorBlackS.setTexture(ColorBlackT);
 }
 
 void App::DrawMapButtons(RenderWindow& window)
 {
-    CreateSprite.setPosition(6.2, 14.9);
-    CreateSprite.setScale(0.68, 0.68);
+    CreateSprite.setPosition(20, 20);
+    CreateSprite.setScale(0.75, 0.75);
     window.draw(CreateSprite);
-    SaveSprite.setPosition(107.7, 72);
-    SaveSprite.setScale(0.68, 0.68);
+
+    SaveSprite.setPosition(80, 85);
+    SaveSprite.setScale(0.75, 0.75);
     window.draw(SaveSprite);
-    LoadSprite.setPosition(6.2, 128.5);
-    LoadSprite.setScale(0.68, 0.68);
-    window.draw(LoadSprite);
-    SelectSprite.setPosition(107.7, 185.6);
-    SelectSprite.setScale(0.68, 0.68);
+
+    SelectSprite.setPosition(20, 150);
+    SelectSprite.setScale(0.75, 0.75);
     window.draw(SelectSprite);
-    DeleteSprite.setPosition(6.2, 241.6);
-    DeleteSprite.setScale(0.68, 0.68);
+
+    DeleteSprite.setPosition(80, 215);
+    DeleteSprite.setScale(0.75, 0.75);
     window.draw(DeleteSprite);
-    DeletePointSprite.setPosition(107.7, 298.7);
-    DeletePointSprite.setScale(0.68, 0.68);
+
+    DeletePointSprite.setPosition(20, 280);
+    DeletePointSprite.setScale(0.75, 0.75);
     window.draw(DeletePointSprite);
-    GoBackSprite.setPosition(6.2, 354.7);
-    GoBackSprite.setScale(0.68, 0.68);
+
+    GoBackSprite.setPosition(80, 345);
+    GoBackSprite.setScale(0.75, 0.75);
     window.draw(GoBackSprite);
+
     ColorRedS.setPosition(42.1, 422.5);
     window.draw(ColorRedS);
-    ColorOrangeS.setPosition(140.7, 422.5);
+    ColorOrangeS.setPosition(140.7, 517.6);
     window.draw(ColorOrangeS);
     ColorYellowS.setPosition(42.1, 517.6);
     window.draw(ColorYellowS);
-    ColorGreenS.setPosition(140.7, 517.6);
-    window.draw(ColorGreenS);
-    ColorBlueS.setPosition(42.1, 612.7);
-    window.draw(ColorBlueS);
-    ColorPurpleS.setPosition(140.7, 612.7);
-    window.draw(ColorPurpleS);
+    ColorBlackS.setPosition(140.7, 612.7);
+    window.draw(ColorBlackS);
+    ColorWhiteS.setPosition(42.1, 612.7);
+    window.draw(ColorWhiteS);
+    ColorPinkS.setPosition(140.7, 422.5);
+    window.draw(ColorPinkS);
 
+    Switch.setFillColor(Color::Green);
+    Switch.setSize(Vector2f(138.8, 5));
+    Switch.setPosition(DeletePointSprite.getPosition().x + 20, DeletePointSprite.getPosition().y);
+    if (isSwitchVisible) {
+        window.draw(Switch);
+    }
+    
 }
 
 void App::CreatePoint(Vector2f mousePos)
@@ -194,8 +211,6 @@ void App::CreatePoint(Vector2f mousePos)
         Coordinate newCoord(mousePos.x, mousePos.y);
         newCoord.setName(pointName);
         activeRoute->value.insertLast(newCoord);
-        printf("Coordenada agregada a la ruta activa: (%.2f, %.2f)\n", mousePos.x, mousePos.y);
-        cout << "NOMBRE DEL PUNTO: " << newCoord.getName() << endl;
     }
 }
 
@@ -216,12 +231,13 @@ void App::HandleMapButtons(RenderWindow &Window, Vector2f mousePos)
                 activeRoute = activeRoute->next;
             }
             activeRoute->value.name = routeName;
-            cout << "NOMBRE DE LA RUTA: " << activeRoute->value.name << endl;
         }
     }
     else if (SaveSprite.getGlobalBounds().contains(mousePos)) {
+        ListOfRoutes.SaveToFile();
     }
     else if (LoadSprite.getGlobalBounds().contains(mousePos)) {
+        
     }
     else if (SelectSprite.getGlobalBounds().contains(mousePos)) {
         if (activeRoute != nullptr) {
@@ -239,7 +255,7 @@ void App::HandleMapButtons(RenderWindow &Window, Vector2f mousePos)
             if (activeRoute->next != nullptr)
                 activeRoute = activeRoute->next;
             else
-                activeRoute = ListOfRoutes.first;
+            activeRoute = ListOfRoutes.first;
             ListOfRoutes.DeleteCurrentRoute(routeToDelete);
             if (ListOfRoutes.size == 0) {
                 activeRoute = nullptr;
@@ -247,51 +263,49 @@ void App::HandleMapButtons(RenderWindow &Window, Vector2f mousePos)
         }
     }
     else if (DeletePointSprite.getGlobalBounds().contains(mousePos)) {
+        
+
         if (canCreate == true) {
             canCreate = false;
+            isSwitchVisible = true;
         }
         else {
             canCreate = true;
+            isSwitchVisible = false;
         }
+       
     }
     else if (GoBackSprite.getGlobalBounds().contains(mousePos)) {
-        cout << "Regresar" << endl;
-        Start();
+        DrawMenu();
     }
     else if (ColorRedS.getGlobalBounds().contains(mousePos)) {
-        cout << "Red" << endl;
         if (activeRoute != nullptr) {
             activeRoute->value.color = Color::Red;
         }
     }
     else if (ColorOrangeS.getGlobalBounds().contains(mousePos)) {
-        cout << "Orange" << endl;
         if (activeRoute != nullptr) {
-            activeRoute->value.color = Color(255, 138, 0);
+            activeRoute->value.color = Color(255, 107, 0);
         }
     }
     else if (ColorYellowS.getGlobalBounds().contains(mousePos)) {
-        cout << "Yellow" << endl;
         if (activeRoute != nullptr) {
             activeRoute->value.color = Color::Yellow;
         }
     }
-    else if (ColorGreenS.getGlobalBounds().contains(mousePos)) {
-        cout << "Green" << endl;
+    else if (ColorBlackS.getGlobalBounds().contains(mousePos)) {
         if (activeRoute != nullptr) {
-            activeRoute->value.color = Color::Green;
+            activeRoute->value.color = Color::Black;
         }
     }
-    else if (ColorBlueS.getGlobalBounds().contains(mousePos)) {
-        cout << "Blue" << endl;
+    else if (ColorWhiteS.getGlobalBounds().contains(mousePos)) {
         if (activeRoute != nullptr) {
-            activeRoute->value.color = Color::Blue;
+            activeRoute->value.color = Color::White;
         }
     }
-    else if (ColorPurpleS.getGlobalBounds().contains(mousePos)) {
-        cout << "Purple" << endl;
+    else if (ColorPinkS.getGlobalBounds().contains(mousePos)) {
         if (activeRoute != nullptr) {
-            activeRoute->value.color = Color(170, 142, 214);
+            activeRoute->value.color = Color(255, 0, 214);
         }
     }
 }
@@ -300,7 +314,7 @@ string App::getTextInput(RenderWindow& window, const string& promptMessage)
 {
     Font font;
     font.loadFromFile("Fuentes/Retro_Gaming.ttf");
-    RectangleShape dialogBox(sf::Vector2f(400, 150));
+    RectangleShape dialogBox(Vector2f(400, 150));
 
     dialogBox.setFillColor(Color(50, 50, 50));
     dialogBox.setOutlineColor(Color::White);

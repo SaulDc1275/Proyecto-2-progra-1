@@ -17,11 +17,13 @@ private:
 	Routes ListOfRoutes;
 	Texture SaveTexture, LoadTexture, DeleteTexture, DeletePointTexture, SelectTexture, GoBackTexture, CreateTexture;
 	Sprite SaveSprite, LoadSprite, DeleteSprite, DeletePointSprite, SelectSprite, GoBackSprite, CreateSprite;
-	Texture ColorOrangeT, ColorPurpleT, ColorBlueT, ColorRedT, ColorYellowT, ColorGreenT;
-	Sprite ColorOrangeS, ColorPurpleS, ColorBlueS, ColorRedS, ColorYellowS, ColorGreenS;
+	Texture ColorOrangeT, ColorPinkT, ColorWhiteT, ColorRedT, ColorYellowT, ColorBlackT;
+	Sprite ColorOrangeS, ColorPinkS, ColorWhiteS, ColorRedS, ColorYellowS, ColorBlackS;
 	bool canCreate = false;
 	bool isCreatingRoute = false;
 	Node<Route>* activeRoute = nullptr;
+	RectangleShape Switch;
+	bool isSwitchVisible = false;
 	
 public:
 

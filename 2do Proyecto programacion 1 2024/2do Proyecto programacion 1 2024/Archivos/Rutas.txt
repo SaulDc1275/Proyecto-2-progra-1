@@ -1,0 +1,16 @@
+Ruta: Montanas
+Color: 255 255 255 
+Punto: 553, 288 - Nombre: Montana El Pizar
+Punto: 643, 486 - Nombre: Montana Pachuca
+Punto: 1094, 422 - Nombre: Montana Chirripo
+Punto: 1316, 472 - Nombre: Montana Nublada
+Punto: 1199, 109 - Nombre: Montana Masaya
+-----------------------------------
+Ruta: Ruta 542
+Color: 0 0 0 
+Punto: 667, 192 - Nombre: Torre de oro
+Punto: 874, 256 - Nombre: Torre Eiffel
+Punto: 1111, 286 - Nombre: Candelabro Enorme
+Punto: 1018, 523 - Nombre: Templo Sagrado
+Punto: 763, 397 - Nombre: Mansion Carrington
+-----------------------------------
